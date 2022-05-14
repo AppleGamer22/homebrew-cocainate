@@ -5,13 +5,13 @@
 class Cocainate < Formula
   desc "Cross-platform caffeinate alternative."
   homepage "https://github.com/AppleGamer22/cocainate"
-  version "1.0.13"
+  version "1.0.14"
   license "GPL-3.0"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/AppleGamer22/cocainate/releases/download/v1.0.13/cocainate_1.0.13_mac_amd64.tar.gz", :using => CurlDownloadStrategy
-      sha256 "cdc37bd7753d92d093af145256cd1e0cc92c848cee68d04bcf5473c9656d9546"
+    if Hardware::CPU.arm?
+      url "https://github.com/AppleGamer22/cocainate/releases/download/v1.0.14/cocainate_1.0.14_mac_arm64.tar.gz", :using => CurlDownloadStrategy
+      sha256 "c13816adea995477de5ebca522e08eafca8e7b04282be9fa3ccdbc3694535c7d"
 
       def install
         bin.install "cocainate"
@@ -21,9 +21,9 @@ class Cocainate < Formula
         zsh_completion.install "cocainate.zsh" => "_cocainate"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/AppleGamer22/cocainate/releases/download/v1.0.13/cocainate_1.0.13_mac_arm64.tar.gz", :using => CurlDownloadStrategy
-      sha256 "a96474f4c9b01f380b9255a8c1cca627aa669c218b88fa5048876c305eff79e5"
+    if Hardware::CPU.intel?
+      url "https://github.com/AppleGamer22/cocainate/releases/download/v1.0.14/cocainate_1.0.14_mac_amd64.tar.gz", :using => CurlDownloadStrategy
+      sha256 "68d595324b3c7bce33a39e20be65ccc076f84bfcfd1e2b4bc0afb9d21feba784"
 
       def install
         bin.install "cocainate"
@@ -37,8 +37,8 @@ class Cocainate < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/AppleGamer22/cocainate/releases/download/v1.0.13/cocainate_1.0.13_linux_amd64.tar.gz", :using => CurlDownloadStrategy
-      sha256 "502553bc4e7961ec527c2c2259f2b26104c9df8c9e1ee9559820a00fbf658c9f"
+      url "https://github.com/AppleGamer22/cocainate/releases/download/v1.0.14/cocainate_1.0.14_linux_amd64.tar.gz", :using => CurlDownloadStrategy
+      sha256 "094adafb255a56b147992a40051c90e4fa0128d81a76ad0bec5890d6b33d88a7"
 
       def install
         bin.install "cocainate"
@@ -49,8 +49,8 @@ class Cocainate < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/AppleGamer22/cocainate/releases/download/v1.0.13/cocainate_1.0.13_linux_arm64.tar.gz", :using => CurlDownloadStrategy
-      sha256 "6f9586387f363180765f40f2031f0cc94e51e124278ea82916673606708dc708"
+      url "https://github.com/AppleGamer22/cocainate/releases/download/v1.0.14/cocainate_1.0.14_linux_arm64.tar.gz", :using => CurlDownloadStrategy
+      sha256 "b4746ac98c502ac5b50eec088887f428a32906d917990b106d10c918e48efe94"
 
       def install
         bin.install "cocainate"
