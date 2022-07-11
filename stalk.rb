@@ -5,13 +5,13 @@
 class Stalk < Formula
   desc "Cross-platform file watcher."
   homepage "https://github.com/AppleGamer22/stalk"
-  version "1.0.2"
+  version "1.0.3"
   license "GPL-3.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/AppleGamer22/stalk/releases/download/v1.0.2/stalk_1.0.2_mac_amd64.tar.gz", :using => CurlDownloadStrategy
-      sha256 "2b890487229a4acc90b4d789484f096b573e094b2788db37d6e1a89faa0d9bff"
+      url "https://github.com/AppleGamer22/stalk/releases/download/v1.0.3/stalk_1.0.3_mac_amd64.tar.gz", :using => CurlDownloadStrategy
+      sha256 "5efacfbff716b506d709f20925bfa5d54c50f9bba63e08fe39a7547924ea87dd"
 
       def install
         bin.install "stalk"
@@ -22,8 +22,8 @@ class Stalk < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/AppleGamer22/stalk/releases/download/v1.0.2/stalk_1.0.2_mac_arm64.tar.gz", :using => CurlDownloadStrategy
-      sha256 "a4e9d6759bdf56b6729bebaf3fb088adf6d1df6c38d2360fb0d40fc7c8d27a71"
+      url "https://github.com/AppleGamer22/stalk/releases/download/v1.0.3/stalk_1.0.3_mac_arm64.tar.gz", :using => CurlDownloadStrategy
+      sha256 "d7c42fc9dcaa8c3cb68b588c2696877b1b64533733c2b564f17e9a765a91591a"
 
       def install
         bin.install "stalk"
@@ -37,8 +37,8 @@ class Stalk < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/AppleGamer22/stalk/releases/download/v1.0.2/stalk_1.0.2_linux_arm64.tar.gz", :using => CurlDownloadStrategy
-      sha256 "dc7761683610b7630b8401ebfd8f67857feb73a00acbc1803350c8c5b50911a7"
+      url "https://github.com/AppleGamer22/stalk/releases/download/v1.0.3/stalk_1.0.3_linux_arm64.tar.gz", :using => CurlDownloadStrategy
+      sha256 "5f1818f23ec9632b015cf617b2c2d2f23aa73a79ac8ce55a2e7999d7fb484455"
 
       def install
         bin.install "stalk"
@@ -49,8 +49,8 @@ class Stalk < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/AppleGamer22/stalk/releases/download/v1.0.2/stalk_1.0.2_linux_amd64.tar.gz", :using => CurlDownloadStrategy
-      sha256 "da2299b34b12b70a267c5d0cf7bd704d77083636867eded07c36c41fdc77f19a"
+      url "https://github.com/AppleGamer22/stalk/releases/download/v1.0.3/stalk_1.0.3_linux_amd64.tar.gz", :using => CurlDownloadStrategy
+      sha256 "631d5afe093ae616365aa46b8ab5003f56c7123ca169486fc77cfc7fa2f22b7b"
 
       def install
         bin.install "stalk"
