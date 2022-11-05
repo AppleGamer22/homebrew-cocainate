@@ -1,0 +1,10 @@
+# yaml-language-server: $schema=https://citation-file-format.github.io/1.2.0/schema.json
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+  - family-names: Bornstein
+    given-names: Omri
+title: AppleGamer22 Homebrew Tap
+version: 1.0.0
+date-released: 2022-03-12
+url: https://github.com/AppleGamer22/homebrew-tap
