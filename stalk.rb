@@ -5,13 +5,13 @@
 class Stalk < Formula
   desc "Cross-platform file watcher."
   homepage "https://github.com/AppleGamer22/stalk"
-  version "1.0.6"
+  version "1.0.7"
   license "GPL-3.0"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/AppleGamer22/stalk/releases/download/v1.0.6/stalk_1.0.6_mac_arm64.tar.gz", using: CurlDownloadStrategy
-      sha256 "78b5bdfbed693f01d66362895b19583a7f0d241821b09d08201fcec4806f92d0"
+    on_intel do
+      url "https://github.com/AppleGamer22/stalk/releases/download/v1.0.7/stalk_1.0.7_mac_amd64.tar.gz", using: CurlDownloadStrategy
+      sha256 "66f45461cf7fae32bea7c505c71f29cbf71cca73ee10fc035d72a1c42d1e0e05"
 
       def install
         bin.install "stalk"
@@ -21,9 +21,9 @@ class Stalk < Formula
         zsh_completion.install "stalk.zsh" => "_stalk"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/AppleGamer22/stalk/releases/download/v1.0.6/stalk_1.0.6_mac_amd64.tar.gz", using: CurlDownloadStrategy
-      sha256 "6f52ed1c2054ddf9a51c0cbc349ac910c30eda5bc8613abf1cdcbe7a12560591"
+    on_arm do
+      url "https://github.com/AppleGamer22/stalk/releases/download/v1.0.7/stalk_1.0.7_mac_arm64.tar.gz", using: CurlDownloadStrategy
+      sha256 "6ee1846755ec9ec375c265413a3a5e1a553d981f0711d73a44acbd6e5562e100"
 
       def install
         bin.install "stalk"
@@ -36,28 +36,32 @@ class Stalk < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/AppleGamer22/stalk/releases/download/v1.0.6/stalk_1.0.6_linux_arm64.tar.gz", using: CurlDownloadStrategy
-      sha256 "4a82c15c00c6b6136c16995c155f02e93f312283cb3da51a23c38b706e7b9f1f"
+    on_intel do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/AppleGamer22/stalk/releases/download/v1.0.7/stalk_1.0.7_linux_amd64.tar.gz", using: CurlDownloadStrategy
+        sha256 "67a1cf883fb8f6ba983f9ca37d30e290545c708f49bde7354e0a9b8f07519492"
 
-      def install
-        bin.install "stalk"
-        man1.install "stalk.1"
-        bash_completion.install "stalk.bash" => "stalk"
-        fish_completion.install "stalk.fish"
-        zsh_completion.install "stalk.zsh" => "_stalk"
+        def install
+          bin.install "stalk"
+          man1.install "stalk.1"
+          bash_completion.install "stalk.bash" => "stalk"
+          fish_completion.install "stalk.fish"
+          zsh_completion.install "stalk.zsh" => "_stalk"
+        end
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/AppleGamer22/stalk/releases/download/v1.0.6/stalk_1.0.6_linux_amd64.tar.gz", using: CurlDownloadStrategy
-      sha256 "a326d9b200afdd1ef4fa860bba4ab3eb4c39df6cce797ee0b73b9e674d211a82"
+    on_arm do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/AppleGamer22/stalk/releases/download/v1.0.7/stalk_1.0.7_linux_arm64.tar.gz", using: CurlDownloadStrategy
+        sha256 "75c3afb5ac836f3be26015139b3d2754fab6788c8683186e77df78a2e022ea50"
 
-      def install
-        bin.install "stalk"
-        man1.install "stalk.1"
-        bash_completion.install "stalk.bash" => "stalk"
-        fish_completion.install "stalk.fish"
-        zsh_completion.install "stalk.zsh" => "_stalk"
+        def install
+          bin.install "stalk"
+          man1.install "stalk.1"
+          bash_completion.install "stalk.bash" => "stalk"
+          fish_completion.install "stalk.fish"
+          zsh_completion.install "stalk.zsh" => "_stalk"
+        end
       end
     end
   end
